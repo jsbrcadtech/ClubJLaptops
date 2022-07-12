@@ -46,7 +46,6 @@ const LoginScreen = () => {
       email,
       password,
     };
-
     dispatch(login(userData));
   };
 

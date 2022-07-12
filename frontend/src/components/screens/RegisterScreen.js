@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { register, reset } from '../../features/auth/authSlice';
+import { register, logout, reset } from '../../features/auth/authSlice';
 import Loading from '../Loading';
 
 const RegisterScreen = () => {
@@ -28,6 +28,9 @@ const RegisterScreen = () => {
     }
 
     if (isSuccess || user) {
+      toast.success('User registered successfully!');
+      dispatch(logout());
+      dispatch(reset());
       navigate('/');
     }
 
@@ -52,7 +55,6 @@ const RegisterScreen = () => {
         email,
         password,
       };
-
       dispatch(register(userData));
     }
   };
