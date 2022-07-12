@@ -28,7 +28,6 @@ const RegisterScreen = () => {
     }
 
     if (isSuccess || user) {
-      toast.success('User registered successfully!');
       dispatch(logout());
       dispatch(reset());
       navigate('/');
@@ -56,6 +55,7 @@ const RegisterScreen = () => {
         password,
       };
       dispatch(register(userData));
+      toast.success('User registered successfully!');
     }
   };
 
