@@ -27,23 +27,36 @@ const Header = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               {user ? (
-                <LinkContainer to="/">
-                  <Nav.Link onClick={onLogout}>
-                    <i className="fa-solid fa-arrow-right-to-bracket"></i> SIGN
-                    OUT
+                <>
+                  <Nav.Link eventKey="disabled" disabled>
+                    <i className="fa-solid fa-user fa-fw"></i>
+                    &nbsp; {`${user.name}`}
                   </Nav.Link>
-                </LinkContainer>
+                  <LinkContainer to="/products">
+                    <Nav.Link>
+                      <i className="fa fa-laptop fa-fw" aria-hidden="true"></i>
+                      &nbsp; Laptops
+                    </Nav.Link>
+                  </LinkContainer>
+
+                  <LinkContainer to="/">
+                    <Nav.Link onClick={onLogout}>
+                      <i className="fa-solid fa-arrow-right-to-bracket fa-fw"></i>
+                      &nbsp; Sign Out
+                    </Nav.Link>
+                  </LinkContainer>
+                </>
               ) : (
                 <>
                   <LinkContainer to="/login">
                     <Nav.Link>
-                      <i className="fa-solid fa-arrow-right-to-bracket"></i>{' '}
-                      SIGN IN
+                      <i className="fa-solid fa-arrow-right-to-bracket fa-fw"></i>
+                      &nbsp; SIGN IN
                     </Nav.Link>
                   </LinkContainer>
                   <LinkContainer to="/register">
                     <Nav.Link>
-                      <i className="fa-solid fa-user-plus"></i> SIGN UP
+                      <i className="fa-solid fa-user-plus"></i>&nbsp; SIGN UP
                     </Nav.Link>
                   </LinkContainer>
                 </>

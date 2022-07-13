@@ -67,6 +67,7 @@ const LoginScreen = () => {
               id="email"
               name="email"
               value={email}
+              autoComplete="on"
               placeholder="Enter your email"
               onChange={onChange}
             />
@@ -78,6 +79,7 @@ const LoginScreen = () => {
               id="password"
               name="password"
               value={password}
+              autoComplete="off"
               placeholder="Enter password"
               onChange={onChange}
             />
