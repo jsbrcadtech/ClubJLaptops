@@ -9,6 +9,11 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
+  const icon = (
+    <span className="logo">
+      <img src="/images/logo.png" alt="logo" width="190" />
+    </span>
+  );
 
   const onLogout = () => {
     dispatch(logout());
@@ -18,10 +23,10 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar className="navbar navbar-dark bg-primary" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>CLUB J Laptops</Navbar.Brand>
+            <Navbar.Brand>{icon}</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
