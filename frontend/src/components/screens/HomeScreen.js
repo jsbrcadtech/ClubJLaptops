@@ -11,7 +11,7 @@ const MainScreen = () => {
             <p className="subtitle">Your new laptop in just a few clicks</p>
           </div>
           <Link className="btn btn-light my-3" to="/login">
-            Login
+            Sign
           </Link>
           <Link className="btn btn-light my-3" to="/register">
             Sign-up
