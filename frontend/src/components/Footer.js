@@ -6,8 +6,19 @@ const Footer = () => {
     <footer>
       <Container>
         <Row>
+          <Col className="d-inline-block text-center">
+            <a href="#">
+              <i className="fab fa-instagram fa-3x "></i>
+            </a>
+            <a href="#">
+              <i className="fab fa-facebook fa-3x"></i>
+            </a>
+          </Col>
+        </Row>
+
+        <Row>
           <Col className="text-center py-3">
-            Copyright &copy; Justus Santanna - Capstone Project
+            Copyright &copy; Justus Santanna - Capstone Project 2022
           </Col>
         </Row>
       </Container>
