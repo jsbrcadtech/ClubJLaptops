@@ -8,22 +8,32 @@ async function getLaptops() {
   let totalResults = laptopSearch.data.searchResult.pageInfo.totalResults;
 
   for (let i = 0; i < results.length; i++) {
-    // console.log(results[i]);
     let resultObj = results[i];
     let product = new Product();
 
+    if (product.id == undefined) {
+      product.id = null;
+    } else {
+      product.id;
+    }
+
     product.id = resultObj.productId;
     product.name = resultObj.title.displayTitle;
-    product.price = resultObj.prices.salePrice.formattedPrice;
-    product.image = resultObj.image.imgUrl;
+    if (resultObj.prices == undefined) {
+      resultObj.prices = null;
+    } else {
+      product.price = resultObj.prices.salePrice.formattedPrice;
+    }
+    if (resultObj.image == undefined) {
+      resultObj.imgUrl = null;
+    } else {
+      product.image = resultObj.image.imgUrl;
+    }
+
     product.description = resultObj.title.seoTitle;
     product.totalResults = totalResults;
 
-    // console.log(product);
-
     laptopsData.push(product);
-
-    // console.log(laptopsData);
   }
   return laptopsData;
 }
